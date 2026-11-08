@@ -42,38 +42,52 @@ All commands are run from the root of the project, from a terminal:
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
-### Useful Terminal Commands
+## Useful Terminal Commands
 
-## Daily Development Workflow
+### Daily Development Workflow
 
-- ** 1. Start the local development server (http://localhost:4321)**
+- **1. Start local development server** (`http://localhost:4321`)
 
-npm run dev
+  ```bash
+  npm run dev
+  ```
 
-- ** 2. Build the site for production (generates the /dist folder)**
+- **2. Build site for production** (generates `/dist`)
 
-npm run build
+  ```bash
+  npm run build
+  ```
 
-- ** 3. Preview the compiled production build locally**
+- **3. Preview production build locally**
 
-npm run preview
+  ```bash
+  npm run preview
+  ```
 
-- ** 4. Create an instant live public preview link via Cloudflare tunnel**
+- **4. Create instant public preview link via Cloudflare tunnel**
+  ```bash
+  npx cloudflared tunnel --url http://localhost:4321
+  ```
 
-npx cloudflared tunnel --url http://localhost:4321
+### Repackaging & Maintenance
 
----
+- **5. Deep clean** — wipe everything to repackage/zip blueprint
 
-## Repackaging & Maintenance
+  ```bash
+  rm -rf node_modules .astro dist
+  ```
 
-- \*\* 5. Deep clean: wipe node_modules, cache, and build output to repackage/zip the blueprint
+- **6. Reinstall dependencies** (required after deep clean or duplication)
 
-rm -rf node_modules .astro dist
+  ```bash
+  npm install
+  ```
 
-- \*\* 6. Reinstall dependencies (REQUIRED after running deep clean or duplicating the folder)
+- **7. Complete reset & reinstall** (use if Astro acts weird or throws cache errors)
+  ```bash
+  rm -rf node_modules .astro dist && npm install
+  ```
 
-npm install
+```
 
-- \*\* 7. Complete reset & reinstall (use if Astro acts weird or throws cache errors)
-
-rm -rf node_modules .astro dist && npm install
+```
