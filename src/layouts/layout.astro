@@ -1,0 +1,45 @@
+---
+// src/layouts/layout.astro
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Professional services and solutions." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased">
+    <!-- Header / Nav -->
+    <header class="border-b border-slate-800 bg-slate-950/50 backdrop-blur">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/" class="font-bold text-xl text-indigo-400">ClientLogo</a>
+        <nav class="space-x-6 text-sm font-medium">
+          <a href="/" class="hover:text-indigo-400 transition">Home</a>
+          <a href="/about" class="hover:text-indigo-400 transition">About</a>
+          <a href="/services" class="hover:text-indigo-400 transition">Services</a>
+          <a href="/contact" class="hover:text-indigo-400 transition">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Content Slot -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-12">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-sm text-slate-500">
+      <p>&copy; {new Date().getFullYear()} Client Company. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

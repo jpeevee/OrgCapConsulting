@@ -41,3 +41,39 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+# Useful Terminal Commands
+
+## Daily Development Workflow
+
+# 1. Start the local development server (http://localhost:4321)
+
+npm run dev
+
+# 2. Build the site for production (generates the /dist folder)
+
+npm run build
+
+# 3. Preview the compiled production build locally
+
+npm run preview
+
+# 4. Create an instant live public preview link via Cloudflare tunnel
+
+npx cloudflared tunnel --url http://localhost:4321
+
+---
+
+## Repackaging & Maintenance
+
+# 5. Deep clean: wipe node_modules, cache, and build output to repackage/zip the blueprint
+
+rm -rf node_modules .astro dist
+
+# 6. Reinstall dependencies (REQUIRED after running deep clean or duplicating the folder)
+
+npm install
+
+# 7. Complete reset & reinstall (use if Astro acts weird or throws cache errors)
+
+rm -rf node_modules .astro dist && npm install
