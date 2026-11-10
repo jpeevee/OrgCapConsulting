@@ -3,26 +3,266 @@
 import Layout from '../layouts/layout.astro';
 import { getCollection } from 'astro:content';
 
-// Fetch the collection array and take the first item
 const settingsList = await getCollection('settings');
 const contact = settingsList[0]?.data;
 ---
 
-<Layout title={contact ? `${contact.companyName} | Home` : "Home"}>
-  {contact ? (
-    <section class="text-center py-12">
-      <h1 class="text-4xl font-extrabold text-white mb-4">
-        Welcome to {contact.companyName}
-      </h1>
-      <p class="text-slate-400 text-lg mb-6">
-        Call us today: <a href={`tel:${contact.phone}`} class="text-indigo-400 hover:underline">{contact.phone}</a>
-      </p>
-      <div class="inline-block bg-slate-800 p-4 rounded-lg border border-slate-700">
-        <p class="text-sm text-slate-300">Email: {contact.email}</p>
-        <p class="text-sm text-slate-300">Location: {contact.address}</p>
+<Layout title={contact ? `${contact.companyName} | Partnering with you to uplift your capabilities` : "OrgCap Consulting"}>
+  
+  <!-- HERO SECTION -->
+  <div class="max-w-7xl mx-auto px-6 pt-8 pb-4">
+    <section class="grid grid-cols-1 lg:grid-cols-2 rounded-xl overflow-hidden shadow-xl border border-[#D8D3C8]">
+      
+      <!-- Left Dark Navy Side -->
+      <div class="bg-[#0C1B2A] text-[#F9F6F0] p-12 sm:p-20 flex flex-col justify-center min-h-[540px]">
+        <div class="max-w-xl">
+          <h1 class="text-4xl sm:text-6xl font-serif font-normal leading-[1.2] mb-6 text-[#F9F6F0] tracking-tight">
+            Partnering with you to uplift your capabilities.
+          </h1>
+          <p class="text-[#F9F6F0] text-lg sm:text-xl leading-relaxed mb-10 font-light">
+            Activate the capabilities you need to navigate disruption with confidence.
+          </p>
+          <a href="#contact" class="inline-block px-7 py-3.5 bg-[#2B8C96] hover:bg-[#216F77] text-white font-bold rounded-xl text-sm uppercase tracking-wider transition shadow-md w-fit">
+            Get in touch
+          </a>
+        </div>
       </div>
+
+      <!-- Right Teal Graphic Side -->
+      <div class="bg-[#2B8C96] p-10 flex items-center justify-center relative overflow-hidden min-h-[350px]">
+        <div class="w-64 h-64 rounded-full bg-[#3CA0AA]/40 absolute -top-12 -right-12 pointer-events-none"></div>
+        <div class="w-48 h-48 rounded-full bg-[#3CA0AA]/50 absolute bottom-6 right-16 pointer-events-none"></div>
+      </div>
+
     </section>
-  ) : (
-    <p class="text-slate-400 text-center py-12">Contact settings file not found.</p>
-  )}
+  </div>
+
+  <!-- SECTION 2: ABOUT & FOUNDER PROFILE -->
+  <div id="about" class="max-w-7xl mx-auto px-6 py-6">
+    <section class="grid grid-cols-1 lg:grid-cols-2 rounded-xl overflow-hidden shadow-xl border border-[#D8D3C8]">
+      
+      <!-- Left Column: About OrgCap (Dark Navy) -->
+      <div class="bg-[#0C1B2A] text-[#F9F6F0] p-10 sm:p-16 space-y-8 flex flex-col justify-center">
+        <span class="text-[#7DD3DC] text-xs uppercase tracking-widest font-mono font-bold">// ABOUT</span>
+        <h2 class="text-3xl sm:text-4xl font-serif leading-snug text-[#F9F6F0]">
+          About Org Cap Consulting
+        </h2>
+        
+        <p class="text-[#7DD3DC] font-semibold text-lg sm:text-xl leading-relaxed">
+          We partner with leaders and organisations to provide pragmatic guidance, support and confidence that their desired organisational capabilities are working together to achieve stated goals.
+        </p>
+
+        <div class="space-y-6 text-[#F9F6F0] text-base sm:text-lg leading-relaxed font-normal">
+          <p>
+            Whether it's navigating through the unknown of AI and digital disruption, optimising your internal change muscles or ensuring your organisation has the right internal capabilities and structure, we are equipped with the expertise and experience to bring you critical insight and support.
+          </p>
+          
+          <div class="border-l-4 border-[#2B8C96] pl-5 my-6 text-[#F9F6F0] italic font-serif text-lg sm:text-xl leading-relaxed">
+            "Our business model has evolved from a passion to enable organisations to navigate disruption and build the required capabilities for transformation to stick."
+          </div>
+
+          <p>
+            We provide tailored solutions to complex challenges and embed capability and sustainable growth through times of change. Our commitment to quality and our partnering approach provide pragmatic solutions that set us apart.
+          </p>
+
+          <p>
+            At Org Cap Consulting, we believe in the power of collaboration. We work closely with our clients to gain a deep understanding of their unique needs and goals, allowing us to deliver impactful advice and readily actionable plans.
+          </p>
+
+          <p>
+            Our proven experience has been demonstrated across a wide range of industries, including financial services, energy, government, and more.
+          </p>
+
+          <p>
+            By leveraging our deep industry knowledge and global and regional perspective, we equip organisations with the capability they need to stay ahead of the curve.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column: Founder Profile / Peter (Light Cream #F9F6F0) -->
+      <div class="bg-[#F9F6F0] p-10 sm:p-16 flex flex-col justify-between space-y-10">
+        <div class="space-y-5">
+          <span class="text-xs uppercase tracking-widest text-[#2B8C96] font-mono font-bold">// FOUNDER & PRINCIPAL CONSULTANT</span>
+          <h3 class="text-3xl font-serif text-[#0C1B2A]">Peter</h3>
+          <p class="text-[#0C1B2A] text-base sm:text-lg leading-relaxed font-medium">
+            With more than 30 years’ experience supporting leading organisations across the Asia-Pacific to shape and navigate change, Peter is known for immersing himself in his clients' businesses and working side-by-side as a trusted in-house partner.
+          </p>
+          <p class="text-[#0C1B2A] text-base leading-relaxed">
+            Peter is dedicated to unlocking potential and enabling clients to achieve sustainable growth and profitability.
+          </p>
+        </div>
+
+        <!-- Founder Image -->
+        <div class="rounded-xl overflow-hidden shadow-lg border border-[#D8D3C8]">
+          <img 
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" 
+            alt="Peter - Founder & Principal Consultant" 
+            class="w-full h-80 object-cover object-top"
+          />
+        </div>
+
+        <!-- Bullet Points List -->
+        <div class="space-y-5 pt-6 border-t border-[#D8D3C8] text-sm sm:text-base text-[#0C1B2A]">
+          <div>
+            <strong class="text-[#2B8C96] block text-base sm:text-lg font-bold mb-1">• Pragmatic guidance</strong>
+            <span class="text-[#0C1B2A] leading-relaxed block">Relevant insight and support tailored to your context.</span>
+          </div>
+          <div>
+            <strong class="text-[#2B8C96] block text-base sm:text-lg font-bold mb-1">• Collaborative approach</strong>
+            <span class="text-[#0C1B2A] leading-relaxed block">Deep understanding of your unique needs and goals.</span>
+          </div>
+          <div>
+            <strong class="text-[#2B8C96] block text-base sm:text-lg font-bold mb-1">• Diverse industry experience</strong>
+            <span class="text-[#0C1B2A] leading-relaxed block">Financial services, energy, government, and more.</span>
+          </div>
+          <div>
+            <strong class="text-[#2B8C96] block text-base sm:text-lg font-bold mb-1">• Competitive pricing</strong>
+            <span class="text-[#0C1B2A] leading-relaxed block">Premier solutions without the premium consulting price tag.</span>
+          </div>
+          <div>
+            <strong class="text-[#2B8C96] block text-base sm:text-lg font-bold mb-1">• Outcome focused</strong>
+            <span class="text-[#0C1B2A] leading-relaxed block">Persistent focus on "getting things done"</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+
+  <!-- SECTION 3: SERVICES GRID -->
+  <section id="services" class="bg-gradient-to-b from-[#062427] via-[#10484E] to-[#165E65] text-[#F9F6F0] py-24 px-6 mt-10">
+    <div class="max-w-7xl mx-auto space-y-16">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl space-y-5">
+        <span class="text-[#7DD3DC] text-xs uppercase tracking-widest font-mono font-bold">// SERVICES</span>
+        <h2 class="text-4xl sm:text-5xl font-serif text-[#F9F6F0]">Your Trusted Delivery Partner</h2>
+        <p class="text-[#F9F6F0] text-lg sm:text-xl leading-relaxed font-light">
+          Org Cap Consulting offers a range of expert services to help organisations navigate change and achieve their goals. We pride ourselves on delivering pragmatic advice and practical solutions to ensure your capabilities are aligned to your objectives.
+        </p>
+      </div>
+
+      <!-- 3-Column Services Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1: AI Adoption -->
+        <div class="bg-[#0C1B2A] border border-[#1E4252] rounded-xl overflow-hidden shadow-2xl flex flex-col">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="AI Adoption" class="h-56 w-full object-cover" />
+          <div class="p-8 sm:p-10 flex-grow space-y-5">
+            <h3 class="text-2xl sm:text-3xl font-serif text-[#F9F6F0]">AI Adoption</h3>
+            <p class="text-[#F9F6F0] text-base leading-relaxed font-normal">
+              AI is a tool for optimising the way work is done and value is delivered. Currently, adoption rates are lagging, with businesses failing to realise the full benefits of organisation-wide adoption. We can support you with shaping and executing your adoption strategy and aligning the focus of your teams to get the most out of AI.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: Change Adoption -->
+        <div class="bg-[#0C1B2A] border border-[#1E4252] rounded-xl overflow-hidden shadow-2xl flex flex-col">
+          <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Change Adoption" class="h-56 w-full object-cover" />
+          <div class="p-8 sm:p-10 flex-grow space-y-5">
+            <h3 class="text-2xl sm:text-3xl font-serif text-[#F9F6F0]">Change Adoption</h3>
+            <p class="text-[#F9F6F0] text-base leading-relaxed font-normal">
+              Fully realising the benefits of your change programs is harder than it needs to be. Our Change Adoption insight will pragmatically help you navigate through transitions and adopt new ways of working. Whether you are seeking an external set of eyes and POV or a holistic change strategy, plan and leadership support to drive positive outcomes, we have the insight to support you.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Organisation Design -->
+        <div class="bg-[#0C1B2A] border border-[#1E4252] rounded-xl overflow-hidden shadow-2xl flex flex-col">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Organisation Design" class="h-56 w-full object-cover" />
+          <div class="p-8 sm:p-10 flex-grow space-y-5">
+            <h3 class="text-2xl sm:text-3xl font-serif text-[#F9F6F0]">Organisation Design</h3>
+            <p class="text-[#F9F6F0] text-base leading-relaxed font-normal">
+              Having the right skills and capabilities, optimised through role clarity is essential for operational efficiency. This enables organisations to face into disruption, sustain the course and realise objectives. Org Cap Consulting brings a wealth of design and implementation experience to ensure organisations have the right skills and capabilities, structured in the right way to respond to opportunities and be successful.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CONTACT FORM -->
+  <section id="contact" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 rounded-xl overflow-hidden border border-[#D8D3C8] shadow-2xl">
+      
+      <!-- Left Column: Contact Details (Dark Navy with WhatsApp/LinkedIn and ABN) -->
+      <div class="lg:col-span-5 bg-[#0C1B2A] text-[#F9F6F0] p-10 sm:p-16 flex flex-col justify-between space-y-10">
+        <div class="space-y-4">
+          <span class="text-[#7DD3DC] text-xs uppercase tracking-widest font-mono font-bold">// CONTACT</span>
+          <h2 class="text-3xl sm:text-4xl font-serif text-[#F9F6F0]">Get in touch with us</h2>
+          <p class="text-[#7DD3DC] text-lg font-medium">We’re glad to hear from you!</p>
+        </div>
+
+        {contact && (
+          <div class="space-y-6 text-base">
+            <div>
+              <span class="block text-xs uppercase tracking-wider text-[#F9F6F0]/70 mb-1">ABN</span>
+              <p class="text-[#F9F6F0] font-medium text-base">91 589 306 630</p>
+            </div>
+
+            <div>
+              <span class="block text-xs uppercase tracking-wider text-[#F9F6F0]/70 mb-1">Email</span>
+              <a href={`mailto:${contact.email}`} class="text-[#7DD3DC] font-semibold text-base hover:underline">{contact.email}</a>
+            </div>
+
+            <div>
+              <span class="block text-xs uppercase tracking-wider text-[#F9F6F0]/70 mb-1">Phone</span>
+              <a href={`tel:${contact.phone}`} class="text-[#F9F6F0] font-medium text-base hover:text-[#7DD3DC] transition">{contact.phone}</a>
+            </div>
+
+            <!-- Social / Messaging Links -->
+            <div class="pt-2 space-y-3">
+              <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-[#7DD3DC] hover:text-white transition font-medium">
+                <span class="w-8 h-8 rounded-full bg-[#2B8C96]/30 flex items-center justify-center text-sm">💬</span>
+                Connect on WhatsApp
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-[#7DD3DC] hover:text-white transition font-medium">
+                <span class="w-8 h-8 rounded-full bg-[#2B8C96]/30 flex items-center justify-center text-sm">🔗</span>
+                Connect on LinkedIn
+              </a>
+            </div>
+          </div>
+        )}
+
+        <div class="pt-6 border-t border-[#1C2C3D] text-sm text-[#F9F6F0]/80">
+          <p>Partnering with organizations across Australia & APAC.</p>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Form -->
+      <div class="lg:col-span-7 bg-[#F9F6F0] p-10 sm:p-16">
+        <p class="text-sm text-slate-600 mb-8">Fields marked with an <span class="text-red-600 font-bold">*</span> are required</p>
+        
+        <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6">
+          <div>
+            <label for="name" class="block text-xs font-bold text-[#0C1B2A] uppercase tracking-wider mb-2">Name <span class="text-red-600">*</span></label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-3.5 bg-white border border-[#D8D3C8] rounded-xl text-base text-[#0C1B2A] focus:outline-none focus:ring-2 focus:ring-[#2B8C96]" />
+          </div>
+
+          <div>
+            <label for="phone" class="block text-xs font-bold text-[#0C1B2A] uppercase tracking-wider mb-2">Phone</label>
+            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3.5 bg-white border border-[#D8D3C8] rounded-xl text-base text-[#0C1B2A] focus:outline-none focus:ring-2 focus:ring-[#2B8C96]" />
+          </div>
+
+          <div>
+            <label for="email" class="block text-xs font-bold text-[#0C1B2A] uppercase tracking-wider mb-2">Email <span class="text-red-600">*</span></label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-3.5 bg-white border border-[#D8D3C8] rounded-xl text-base text-[#0C1B2A] focus:outline-none focus:ring-2 focus:ring-[#2B8C96]" />
+          </div>
+
+          <div>
+            <label for="message" class="block text-xs font-bold text-[#0C1B2A] uppercase tracking-wider mb-2">Message <span class="text-red-600">*</span></label>
+            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3.5 bg-white border border-[#D8D3C8] rounded-xl text-base text-[#0C1B2A] focus:outline-none focus:ring-2 focus:ring-[#2B8C96]"></textarea>
+          </div>
+
+          <button type="submit" class="px-9 py-4 bg-[#0C1B2A] hover:bg-[#2B8C96] text-white font-bold rounded-xl text-xs sm:text-sm uppercase tracking-wider transition shadow-lg">
+            Send message
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
 </Layout>
